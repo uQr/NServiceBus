@@ -15,7 +15,10 @@
             var logicalAddress = context.Settings.LogicalAddress();
             var performanceDiagnosticsBehavior = new ReceivePerformanceDiagnosticsBehavior(logicalAddress.EndpointInstance.Endpoint);
 
-            context.Pipeline.Remove("ReceivePerformanceDiagnosticsBehavior");
+
+            //todo: features.Disable("NewNameOfCorePerfCounterFeature");
+            //context.Pipeline.Remove("ReceivePerformanceDiagnosticsBehavior");
+
             context.Pipeline.Register("PerfCountersExternal",performanceDiagnosticsBehavior, "Provides various performance counters for receive statistics");
             context.RegisterStartupTask(new WarmupCooldownTask(performanceDiagnosticsBehavior));
         }
