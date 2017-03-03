@@ -6,6 +6,7 @@ namespace NServiceBus.Config.ConfigurationSource
     /// If you want to change the source of only a specific set of configuration data,
     /// implement <see cref="IProvideConfiguration&lt;T&gt;" /> instead.
     /// </summary>
+    [ObsoleteEx(Message = "The use of the IConfigurationSource is discouraged. Code configuration is prefered over configuration sources.", RemoveInVersion ="7.0")]
     public interface IConfigurationSource
     {
         /// <summary>
@@ -17,6 +18,7 @@ namespace NServiceBus.Config.ConfigurationSource
     /// <summary>
     /// Abstraction of a configuration source for a given piece of configuration data.
     /// </summary>
+    [ObsoleteEx(Message = "The use of the IProvideConfiguration is discouraged. Code configuration is prefered over configuration sources.", RemoveInVersion ="7.0")]
     public interface IProvideConfiguration<T>
     {
         /// <summary>
